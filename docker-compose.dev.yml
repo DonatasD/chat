@@ -1,0 +1,21 @@
+version: '3'
+services:
+  api:
+    image: openjdk:11.0.2-jdk-slim-stretch
+    working_dir: /api
+    command: ./mvnw spring-boot:run
+    volumes:
+      - ./api:/api
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dev"
+
+  ui:
+    image: node:8-alpine
+    working_dir: /ui
+    command: npm run start
+    volumes:
+      - ./ui:/ui
+    ports:
+        - "3000:3000"
+    depends_on:
+      - api

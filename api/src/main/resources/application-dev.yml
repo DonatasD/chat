@@ -1,0 +1,6 @@
+spring:
+  devtools:
+    restart:
+      additional-paths: .
+  profiles:
+    active: dev
