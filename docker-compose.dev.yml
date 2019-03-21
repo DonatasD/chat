@@ -6,8 +6,21 @@ services:
     command: ./mvnw spring-boot:run
     volumes:
       - ./api:/api
+    networks:
+      - overlay
     environment:
       - "SPRING_PROFILES_ACTIVE=dev"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    networks:
+      - overlay
+    ports:
+      - "27017:27017"
 
   ui:
     image: node:8-alpine
@@ -15,7 +28,12 @@ services:
     command: npm run start
     volumes:
       - ./ui:/ui
+    networks:
+      - overlay
     ports:
         - "3000:3000"
     depends_on:
       - api
+
+networks:
+  overlay:

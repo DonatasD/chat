@@ -1,6 +1,14 @@
 spring:
-  devtools:
-    restart:
-      additional-paths: .
   profiles:
     active: dev
+  data:
+    mongodb:
+      database: chat
+  webflux:
+    hiddenmethod:
+      filter:
+        enabled: false
+
+logging:
+  level:
+    org.springframework.web: DEBUG

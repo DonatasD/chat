@@ -1,17 +1,37 @@
-import * as serviceWorker from './serviceWorker';
+import AppRouter from '@App/app.router';
+import configureStore, { history } from '@Store/configureStore';
+import { ConnectedRouter } from 'connected-react-router';
 import * as React from 'react';
-import { BrowserRouter } from 'react-router-dom'
 import { render } from 'react-dom';
-import AppRoutes from './components/AppRoutes';
+import { AppContainer } from 'react-hot-loader';
+import { Provider } from 'react-redux';
 
+const store = configureStore();
+// store.
 
-render((
-    <BrowserRouter>
-        <AppRoutes/>
-    </BrowserRouter>
-), document.getElementById('root'));
+render(
+    <AppContainer>
+        <Provider store={store}>
+            <ConnectedRouter history={history}>
+                <AppRouter/>
+            </ConnectedRouter>
+        </Provider>
+    </AppContainer>,
+    document.getElementById('root'),
+);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+if (module.hot) {
+    module.hot.accept('./app/app.router', () => {
+        const NewAppRouter = require('./app/app.router');
+        render(
+            <AppContainer>
+                <Provider store={store}>
+                    <ConnectedRouter history={history}>
+                        <NewAppRouter/>
+                    </ConnectedRouter>
+                </Provider>
+            </AppContainer>,
+            document.getElementById('root'),
+        );
+    });
+}
