@@ -26,14 +26,14 @@
       "@Components/*": [
         "components/*"
       ],
+      "@Config/*": [
+        "config/*"
+      ],
       "@Models/*": [
         "models/*"
       ],
       "@Reducers/*": [
         "reducers/*"
-      ],
-      "@Store/*": [
-        "store/*"
       ],
       "@Utils/*": [
         "utils/*"

@@ -1,5 +1,7 @@
 import AppRouter from '@App/app.router';
-import configureStore, { history } from '@Store/configureStore';
+import configureStore, { history } from '@Config/store';
+import configureTheme from '@Config/theme';
+import { ThemeProvider } from '@material-ui/styles';
 import { ConnectedRouter } from 'connected-react-router';
 import * as React from 'react';
 import { render } from 'react-dom';
@@ -7,16 +9,18 @@ import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 
 const store = configureStore();
-// store.
+const theme = configureTheme();
 
 render(
-    <AppContainer>
-        <Provider store={store}>
-            <ConnectedRouter history={history}>
-                <AppRouter/>
-            </ConnectedRouter>
-        </Provider>
-    </AppContainer>,
+    <ThemeProvider theme={theme}>
+        <AppContainer>
+            <Provider store={store}>
+                <ConnectedRouter history={history}>
+                    <AppRouter/>
+                </ConnectedRouter>
+            </Provider>
+        </AppContainer>
+    </ThemeProvider>,
     document.getElementById('root'),
 );
 

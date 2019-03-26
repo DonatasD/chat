@@ -1,6 +1,6 @@
 package com.donatasd.chat.ws;
 
-import com.donatasd.chat.entity.message.dto.MessageDTO;
+import com.donatasd.chat.dto.MessageDTO;
 import com.donatasd.chat.ws.event.ChatEvent;
 import com.donatasd.chat.ws.event.MessageCreatedEvent;
 

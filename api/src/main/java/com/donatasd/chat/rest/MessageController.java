@@ -1,13 +1,13 @@
-package com.donatasd.chat.entity.message.controller;
+package com.donatasd.chat.rest;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.donatasd.chat.entity.message.dto.MessageCreateDTO;
-import com.donatasd.chat.entity.message.dto.MessageDTO;
-import com.donatasd.chat.entity.message.service.MessageService;
+import com.donatasd.chat.dto.MessageCreateDTO;
+import com.donatasd.chat.dto.MessageDTO;
+import com.donatasd.chat.service.MessageService;
 import lombok.extern.log4j.Log4j2;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

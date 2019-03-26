@@ -1,10 +1,10 @@
-package com.donatasd.chat.entity.message.model;
+package com.donatasd.chat.model;
 
 import java.time.LocalDateTime;
 
-import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
@@ -15,17 +15,20 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Message {
+public class User {
 
     @Id
     private String id;
 
-    private String content;
+    private String displayName;
+
+    private String email;
+
+    private String password;
 
     @CreatedDate
     private LocalDateTime createdDate;
 
-    @CreatedBy
-    private String createdBy;
-
+    @LastModifiedDate
+    private LocalDateTime modifiedDate;
 }

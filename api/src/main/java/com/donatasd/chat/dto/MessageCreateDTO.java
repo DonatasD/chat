@@ -1,4 +1,4 @@
-package com.donatasd.chat.entity.message.dto;
+package com.donatasd.chat.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

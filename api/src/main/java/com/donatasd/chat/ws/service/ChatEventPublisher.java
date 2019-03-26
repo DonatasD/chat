@@ -3,7 +3,7 @@ package com.donatasd.chat.ws.service;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
-import com.donatasd.chat.entity.message.dto.MessageDTO;
+import com.donatasd.chat.dto.MessageDTO;
 
 import static com.donatasd.chat.ws.ChatWebSocketEventFactory.createdMessage;
 

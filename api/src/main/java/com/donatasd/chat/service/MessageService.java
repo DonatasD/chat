@@ -1,12 +1,12 @@
-package com.donatasd.chat.entity.message.service;
+package com.donatasd.chat.service;
 
 import org.springframework.stereotype.Service;
 
+import com.donatasd.chat.dto.MessageCreateDTO;
+import com.donatasd.chat.dto.MessageDTO;
+import com.donatasd.chat.mapper.MessageMapper;
+import com.donatasd.chat.repository.MessageRepository;
 import com.donatasd.chat.ws.service.ChatEventPublisher;
-import com.donatasd.chat.entity.message.dto.MessageCreateDTO;
-import com.donatasd.chat.entity.message.dto.MessageDTO;
-import com.donatasd.chat.entity.message.mapper.MessageMapper;
-import com.donatasd.chat.entity.message.repository.MessageRepository;
 import lombok.extern.log4j.Log4j2;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

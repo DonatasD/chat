@@ -2,7 +2,7 @@ package com.donatasd.chat.factory;
 
 import java.time.LocalDateTime;
 
-import com.donatasd.chat.entity.message.model.Message;
+import com.donatasd.chat.model.Message;
 import lombok.Builder;
 
 import static com.donatasd.chat.utils.FactoryUtils.alphanumericString;

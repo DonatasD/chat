@@ -42,9 +42,9 @@ const sassModuleRegex = /\.module\.(scss|sass)$/;
 const alias = {
   '@App': path.resolve(paths.appSrc, 'app/'),
   '@Components': path.resolve(paths.appSrc, 'components/'),
+  '@Config': path.resolve(paths.appSrc, 'config/'),
   '@Models': path.resolve(paths.appSrc, 'models/'),
   '@Reducers': path.resolve(paths.appSrc, 'reducers/'),
-  '@Store': path.resolve(paths.appSrc, 'store/'),
   '@Utils': path.resolve(paths.appSrc, 'utils/'),
 };
 

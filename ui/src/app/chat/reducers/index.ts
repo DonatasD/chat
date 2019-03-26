@@ -30,6 +30,11 @@ export default (state: ChatState = initialChatState, action: ChatActions): ChatS
                 ...state,
                 loading: false,
             };
+        case ChatActionTypes.MessageCreated:
+            return {
+                ...state,
+                messages: [...state.messages, action.payload.message],
+            };
         default:
             return state;
     }

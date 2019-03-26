@@ -1,4 +1,5 @@
 import { ChatState } from '@App/chat/reducers';
+import { Dispatch } from 'redux';
 
 export interface Message {
     content: string;
@@ -8,6 +9,7 @@ export interface Message {
 
 export interface ChatContainerActions {
     load: () => any;
+    dispatch: Dispatch;
 }
 
 export interface ChatContainerProps {
@@ -15,6 +17,18 @@ export interface ChatContainerProps {
     actions: ChatContainerActions;
 }
 
+export interface ChatContainerState {
+    ws: WebSocket;
+}
+
+export interface MessageListComponentProps {
+    messages: Message[];
+}
+
 export interface MessageComponentProps {
     message: Message;
+}
+
+export enum ChatWebSocketEventType {
+    MessageCreated = 'MESSAGE_CREATED',
 }

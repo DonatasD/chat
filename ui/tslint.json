@@ -16,7 +16,8 @@
       "single"
     ],
     "interface-name": false,
-    "arrow-parens": false
+    "arrow-parens": false,
+    "no-empty": false
   },
   "rulesDirectory": []
 }

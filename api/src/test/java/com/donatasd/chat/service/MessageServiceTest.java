@@ -1,4 +1,4 @@
-package com.donatasd.chat.entity.message.service;
+package com.donatasd.chat.service;
 
 import java.util.Objects;
 import java.util.function.Predicate;
@@ -13,10 +13,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.donatasd.chat.entity.message.dto.MessageCreateDTO;
-import com.donatasd.chat.entity.message.dto.MessageDTO;
-import com.donatasd.chat.entity.message.model.Message;
-import com.donatasd.chat.entity.message.repository.MessageRepository;
+import com.donatasd.chat.dto.MessageCreateDTO;
+import com.donatasd.chat.dto.MessageDTO;
+import com.donatasd.chat.model.Message;
+import com.donatasd.chat.repository.MessageRepository;
 import com.donatasd.chat.factory.MessageFactory;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
